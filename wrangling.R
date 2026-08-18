@@ -55,6 +55,22 @@ rates_final_table <- tpma_lookup_with_config |>
     tpma_mechanism,
     tpma_name,
     tpma_code)
-  
+
+# outpatient coverage
+outpatient_summary <- opa_counts |> 
+  filter(mitigable != "all") |> 
+  mutate(percentage = attendances / sum(attendances), .by = "fyear") |> 
+  filter(mitigable == "mitigable")
+
+# ed coverage
+ed_summary <- ed_counts |> 
+  filter(mitigable != "all") |> 
+  mutate(percentage = attendances / sum(attendances), .by = "fyear") |> 
+  filter(mitigable == "mitigable")
+
+apc_summary <- apc_counts |> 
+  filter(metric == "admissions") |> 
+  mutate(percentage = mitigable / total) |> 
+  select(!usual)
 
 
