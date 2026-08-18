@@ -68,6 +68,7 @@ ed_summary <- ed_counts |>
   mutate(percentage = attendances / sum(attendances), .by = "fyear") |> 
   filter(mitigable == "mitigable")
 
+# apc coverage
 apc_summary <- apc_counts |> 
   filter(metric == "admissions") |> 
   mutate(percentage = mitigable / total) |> 
