@@ -1,4 +1,6 @@
 source("R/lakemart_function.R")
+source("R/get_tpma_lookup.R")
+source("R/load_config.R")
 library(tidyverse)
 
 
