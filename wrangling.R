@@ -77,3 +77,10 @@ apc_summary <- apc_counts |>
   select(!usual)
 
 
+# save files --------------------------------------------------------------
+
+write.csv(rates_final_table, "outputs/rates_final_table.csv")
+write.csv(outpatient_summary, "outputs/outpatient_summary.csv")
+write.csv(ed_summary, "outputs/ed_summary.csv")
+write.csv(apc_summary, "outputs/apc_summary.csv")
+
